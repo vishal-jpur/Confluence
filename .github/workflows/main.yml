@@ -24,4 +24,9 @@ jobs:
 
       - name: Generate Word document
         run: python Confluence.py
-        
+
+      - name: Upload report as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: Word-Report
+          path: Monthly_Report.docx

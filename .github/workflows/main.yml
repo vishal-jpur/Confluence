@@ -1,0 +1,27 @@
+name: Create Word Document
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create-document:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install python-docx
+
+      - name: Generate Word document
+        run: python confluence/generate_word_document.py
+        

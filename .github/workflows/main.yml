@@ -23,5 +23,5 @@ jobs:
           pip install python-docx
 
       - name: Generate Word document
-        run: python Confluence/Confluence.py
+        run: python Confluence.py
         
